@@ -34,7 +34,8 @@ public class MainPage extends VerticalLayout {
         startButton.setText("Start");
         startButton.setDisableOnClick(true);
         startButton.addClickListener(e -> {
-            var text = restTemplate.postForObject("http://localhost:7080/hello", codeArea.getValue(), String.class);
+            var text = restTemplate
+                    .postForObject("http://localhost:7080/api/script", codeArea.getValue(), String.class);
 
             resultArea.setValue(text);
 
